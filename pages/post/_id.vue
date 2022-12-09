@@ -12,7 +12,7 @@
 export default {
   name: 'IndexPage',
   async asyncData({route}) {
-    var perro = route.params.id
+    var perro = 'el-detras-de-los-meses-sin-intereses-factibles-o-no'
     const noticia = await fetch(`https://gv.unocrm.mx/api/v1/news?filter[slug]=${perro}`).then((res)=>res.json())
     return { noticia }
   },
