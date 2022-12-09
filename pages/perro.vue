@@ -18,7 +18,7 @@ export default {
   head(){
     return{
       title:'Prueba',
-      meta:[{property: 'og:image', content: 'https://gv.unocrm.mx/files/1669855106.png'}]
+      meta:[{hid: 'og-image', property: 'og:image', content: 'https://gv.unocrm.mx/files/1669855106.png'}]
     }
   }
 }
