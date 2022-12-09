@@ -15,11 +15,11 @@ export default {
       console.log(this.image)
     })
   },
-  head(){
-    return{
+  head:{
+    //return{
       title:'Prueba',
-      meta:[{hid: 'og-image', property: 'og:image', content: 'https://gv.unocrm.mx/files/1669855106.png'}]
-    }
+      meta:[{property: 'og:image', content: 'https://gv.unocrm.mx/files/1669855106.png'}]
+    //}
   }
 }
 </script>
