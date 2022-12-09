@@ -23,7 +23,7 @@ export default {
     {property:"og:site_name", content:"The Rock Photo Studio"},
     {property:"og:title", content:"The Rock Photo Studio in Florida"},
     {property:"og:description", content:"The best photo studio for your events"},
-    {property:"og:image", content:"https://www.zooplus.es/magazine/wp-content/uploads/2019/07/border-collie-.jpeg"},
+    {property:"og:image", content:postDetails.featured_media_path},
     {property:"og:type", content:"website"},
     {property:"og:image:type", content:"image/jpeg"},
     {property:"og:image:width", content:"300"},
