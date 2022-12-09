@@ -13,7 +13,7 @@
 export default {
   name: 'IndexPage',
   async asyncData({route}) {
-    const noticia = await fetch(`https://gv.unocrm.mx/api/v1/news?filter[slug]=${route.query.n}`).then((res)=>res.json())
+    const noticia = await fetch(`https://gv.unocrm.mx/api/v1/news?filter[slug]=el-detras-de-los-meses-sin-intereses-factibles-o-no`).then((res)=>res.json())
     return { noticia }
   },
 }
