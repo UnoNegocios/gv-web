@@ -6,13 +6,21 @@
 import axios from 'axios'
 export default {
   name: 'IndexPage',
+  data(){return{
+    image:''
+  }},
+  created(){
+    axios.get('https://gv.unocrm.mx/api/v1/news?filter[title]=' + this.$route.query.noticia.replace(/porciento/g, '%').replace(/-/g, ' ').replace(/gionmdio/g, '-')).then(resp=>{
+      this.image = resp.data.data[0].featured_media_path
+    })
+  },
   head(){
     return{
       title:'Prueba',
       meta:[{
         hid: 'og:image', 
         property: 'og:image', 
-        content: 'https://www.bubblypet.com/wp-content/uploads/2021/08/Shepherd-dog-breed-Australian-Shepherd.jpg'
+        content: this.image
       }]
     }
   }
