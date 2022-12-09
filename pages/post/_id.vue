@@ -5,6 +5,7 @@
       :description="noticia.data[0].short_description"
       :image="noticia.data[0].featured_media_path"
     />
+    Hola mundo
   </v-container>
 </template>
 
