@@ -12,6 +12,7 @@ export default {
   async fetch() {
     let { data } = await axios.get(`https://gv.unocrm.mx/api/v1/news?filter[title]=${encodeURI(this.$route.query.n.replace(/porciento/g, '%').replace(/-/g, ' ').replace(/gionmdio/g, '-'))}`);
     this.image = data
+    console.log(this.image)
   },
   head(){
     return{
