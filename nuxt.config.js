@@ -43,7 +43,7 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://gamavision.com/logo.png'
+        content: 'https://nuxtjs.org/nuxt-card.png'
       },
 
       // Open Graph
@@ -69,18 +69,20 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://gamavision.com/logo.png'
+        content: 'https://nuxtjs.org/nuxt-card.png'
       },
       {
         hid: 'og:image:secure_url',
         property: 'og:image:secure_url',
-        content: 'https://gamavision.com/logo.png'
+        content: 'https://nuxtjs.org/nuxt-card.png'
       },
       {
         hid: 'og:image:alt',
         property: 'og:image:alt',
         content: 'NuxtJS'
       },
+      {property:"og:image:width", content:"300"},
+    {property:"og:image:height", content:"300"},
     ],
     // canonical
     link: [
