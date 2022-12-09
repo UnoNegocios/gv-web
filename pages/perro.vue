@@ -8,10 +8,10 @@ export default {
   name: 'IndexPage',
   head:{
     title:'Prueba',
-    meta:[{
+    meta(){return[{
       property: 'og:image', 
-      content: 'https://cdn.britannica.com/84/232784-050-1769B477/Siberian-Husky-dog.jpg'
-    }]
+      content: 'https://www.bubblypet.com/wp-content/uploads/2021/08/Shepherd-dog-breed-Australian-Shepherd.jpg'
+    }]}
   }
 }
 </script>
