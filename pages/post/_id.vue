@@ -12,7 +12,8 @@
 export default {
   name: 'IndexPage',
   async asyncData({route}) {
-    const noticia = await fetch(`https://gv.unocrm.mx/api/v1/news?filter[slug]=${route.params.id}`).then((res)=>res.json())
+    var perro = route.params.id
+    const noticia = await fetch(`https://gv.unocrm.mx/api/v1/news?filter[slug]=${perro}`).then((res)=>res.json())
     return { noticia }
   },
 }
