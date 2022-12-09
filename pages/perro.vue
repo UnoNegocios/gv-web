@@ -7,20 +7,23 @@ import axios from 'axios'
 export default {
   name: 'IndexPage',
   data(){return{
-    image:''
+    image:'',
   }},
-  created(){
-    axios.get('https://gv.unocrm.mx/api/v1/news?filter[title]=' + this.$route.query.noticia.replace(/porciento/g, '%').replace(/-/g, ' ').replace(/gionmdio/g, '-')).then(resp=>{
-      this.image = resp.data.data[0].featured_media_path
-    })
+  async asyncData({ route }) {
+    console.log(encodeURI(route.query.n))
+    let { data } = await axios.get(`https://gv.unocrm.mx/api/v1/news?filter[title]=${encodeURI(route.query.n.replace(/porciento/g, '%').replace(/-/g, ' ').replace(/gionmdio/g, '-'))}`);
+    console.log(data)
+    return {
+        image: data
+    }
   },
   head(){
     return{
-      title:'Prueba',
+      title:this.$route.query.n.replace(/porciento/g, '%').replace(/-/g, ' ').replace(/gionmdio/g, '-'),
       meta:[{
         hid: 'og:image', 
         property: 'og:image', 
-        content: this.image
+        content: this.image.data[0].featured_media_path
       }]
     }
   }
