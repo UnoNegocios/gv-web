@@ -9,6 +9,7 @@ export default {
   head:{
     title:'Prueba',
     meta(){return[{
+      hid: 'og:image', 
       property: 'og:image', 
       content: 'https://www.bubblypet.com/wp-content/uploads/2021/08/Shepherd-dog-breed-Australian-Shepherd.jpg'
     }]}
