@@ -12,7 +12,7 @@ export default {
     app.head.meta = [{
       itemprop: "image",
       hid: 'og:image', 
-      property: 'og:image', 
+      name: 'og:image', 
       content: postDetails.featured_media_path
     }]
     return { postDetails };
