@@ -80,7 +80,9 @@ export default {
         hid: 'og:image:alt',
         property: 'og:image:alt',
         content: 'NuxtJS'
-      }
+      },
+      {property:"og:image:width", content:"300"},
+      {property:"og:image:height", content:"300"},
     ],
     // canonical
     link: [
