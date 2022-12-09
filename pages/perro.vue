@@ -9,11 +9,9 @@ export default {
   data(){return{
     image:'',
   }},
-  async asyncData({ route }) {
-    let { data } = await axios.get(`https://gv.unocrm.mx/api/v1/news?filter[id]=${encodeURI(route.query.n.replace(/porciento/g, '%').replace(/-/g, ' ').replace(/gionmdio/g, '-'))}`);
-    return {
-        image: data
-    }
+  async fetch() {
+    let { data } = await axios.get(`https://gv.unocrm.mx/api/v1/news?filter[title]=${encodeURI(this.$route.query.n.replace(/porciento/g, '%').replace(/-/g, ' ').replace(/gionmdio/g, '-'))}`);
+    this.image = data
   },
   head(){
     return{
