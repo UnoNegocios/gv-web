@@ -19,7 +19,7 @@ export default {
       title:'prueba',
       meta:[{
         hid: 'og:image', 
-        property: 'og:image', 
+        property: 'og:image',
         content: this.image
       }]
     }

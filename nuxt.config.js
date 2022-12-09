@@ -1,6 +1,31 @@
 export default {
+  async asyncData({ app, route }) {
+    let postDetails = await axios.get(`https://gv.unocrm.mx/api/v1/news?filter[slug]=${route.query.n}`);
+    postDetails = postDetails.data.data[0];
+    app.head.meta = [{
+      itemprop: "image",
+      hid: 'og:image', 
+      rel:"preload",
+      property: 'og:image', 
+      content: postDetails.featured_media_path
+    }]
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
-  
+  head: {
+    title: 'gamavisionweb',
+    htmlAttrs: {
+      lang: 'en'
+    },
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' },
+      { name: 'format-detection', content: 'telephone=no' }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
