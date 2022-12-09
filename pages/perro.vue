@@ -10,8 +10,7 @@ export default {
     image:'',
   }},
   async asyncData({ route }) {
-    var id = 232//encodeURI(route.query.n.replace(/porciento/g, '%').replace(/-/g, ' ').replace(/gionmdio/g, '-'))
-    let { data } = await axios.get(`https://gv.unocrm.mx/api/v1/news?filter[title]=${id}`);
+    let { data } = await axios.get(`https://gv.unocrm.mx/api/v1/news?filter[id]=${encodeURI(route.query.n.replace(/porciento/g, '%').replace(/-/g, ' ').replace(/gionmdio/g, '-'))}`);
     return {
         image: data
     }
