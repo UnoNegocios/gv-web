@@ -1,15 +1,4 @@
 export default {
-  async asyncData({ app, route }) {
-    let postDetails = await axios.get(`https://gv.unocrm.mx/api/v1/news?filter[slug]=${route.query.n}`);
-    postDetails = postDetails.data.data[0];
-    app.head.meta = [{
-      itemprop: "image",
-      hid: 'og:image', 
-      rel:"preload",
-      property: 'og:image', 
-      content: postDetails.featured_media_path
-    }]
-  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'gamavisionweb',

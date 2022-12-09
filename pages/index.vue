@@ -1,12 +1,20 @@
 <template>
-  <Tutorial/>
+  <v-container>
+    <SocialHead
+      :title="noticia.data[0].title"
+      :description="noticia.data[0].short_description"
+      :image="noticia.data[0].featured_media_path"
+    />
+    <Tutorial/>
+  </v-container>
 </template>
 
 <script>
 export default {
   name: 'IndexPage',
-  created(){
-    console.log(this.$route.params.slug,)
-  }
+  async asyncData({route}) {
+    const noticia = await fetch(`https://gv.unocrm.mx/api/v1/news?filter[slug]=${route.query.n}`).then((res)=>res.json())
+    return { noticia }
+  },
 }
 </script>
