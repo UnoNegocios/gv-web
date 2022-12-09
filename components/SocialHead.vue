@@ -68,7 +68,9 @@ export default {
           hid: 'og:image:alt',
           property: 'og:image:alt',
           content: this.title
-        }
+        },
+        {property:"og:image:width", content:"300"},
+        {property:"og:image:height", content:"300"},
       ]
     }
   }
