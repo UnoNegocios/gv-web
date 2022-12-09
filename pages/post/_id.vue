@@ -5,7 +5,6 @@
       :description="noticia.data[0].short_description"
       :image="noticia.data[0].featured_media_path"
     />
-    <Tutorial/>
   </v-container>
 </template>
 
@@ -13,7 +12,7 @@
 export default {
   name: 'IndexPage',
   async asyncData({route}) {
-    const noticia = await fetch(`https://gv.unocrm.mx/api/v1/news?filter[slug]=${route.param.n}`).then((res)=>res.json())
+    const noticia = await fetch(`https://gv.unocrm.mx/api/v1/news?filter[slug]=${route.params.id}`).then((res)=>res.json())
     return { noticia }
   },
 }
